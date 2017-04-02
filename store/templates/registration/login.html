@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+
+
+    <div class="login-container">
+		<div class="login-title">
+            {% trans "Login" %}
+		</div>
+		<form method="post" action=".", name="form">{% csrf_token %}
+			<div class="login-input">
+                {{ form.username.errors }}
+                <label for="id_username">Usuário:</label>
+                {{ form.username }}
+			</div>
+			<div class="login-input">
+                {{ form.password.errors }}
+                <label for="id_password">Senha:</label>
+                {{ form.password }}
+			</div>
+			<div class="login-button">
+				<a href="#" onclick="document.forms['form'].submit(); return false;"> Login </a>
+                <input type="hidden" name="next" value="/" />
+			</div>
+		</form>
+	</div>
+{% endblock %}

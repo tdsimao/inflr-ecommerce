@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+    <div class="login-container">
+		<div class="login-title">
+			Novo usuário
+		</div>
+		<form method="post" action="." name="Cadastrar">{% csrf_token %}
+			<div class="login-input">
+                {{ form.username.errors }}
+                <label for="id_username">Usuário:</label>
+                {{ form.username }}
+			</div>
+			<div class="login-input">
+                {{ form.email.errors }}
+                <label for="id_email">Email:</label>
+                {{ form.email }}
+			</div>
+			<div class="login-input">
+                {{ form.password1.errors }}
+                <label for="id_password1">Senha:</label>
+                {{ form.password1 }}
+			</div>
+			<div class="login-input">
+                {{ form.password2.errors }}
+                <label for="id_password2">Confirmar senha:</label>
+                {{ form.password2 }}
+			</div>
+			<div class="login-button">
+                <a href="#" onclick="document.forms['form'].submit(); return false;"> Cadastrar </a>
+			</div>
+
+		</form>
+	</div>
+{% endblock %}

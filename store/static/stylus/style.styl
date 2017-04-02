@@ -1,0 +1,330 @@
+/****** Config Files *******/
+@import 'reset'
+
+use_reset('meyer')
+reset('all')
+/***************************/
+
+/****** Components *********/
+@import 'bosons/boson-default.styl'
+/***************************/
+
+*, *::after, *::before
+	box-sizing border-box
+	-webkit-font-smoothing antialiased
+	text-shadow rgba(0,0,0,.01) 0 0 1px
+
+body
+	font-family "Roboto", sans-serif
+	font-weight 600
+	width 100%
+	height 100%
+	background-color #c5cae9
+	
+html
+	height 100%
+	
+a
+	color #FFF
+	text-decoration none
+	
+
+body::-webkit-scrollbar {
+    width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #03958A;
+  outline: 1px solid #03958A;
+}
+
+
+/******* Container *********/
+
+.container
+	width 100%
+	max-width 1024px
+	margin 102px auto 0 auto
+	&-products
+		margin-top 142px
+	
+.header-wrapper
+	width 100%
+	position absolute
+	top 0 
+	left 0
+	right 0
+	background-color #303f9f
+	color #FFF
+	padding 12px 46px
+
+.header-logo
+	width 100px
+	
+.header-links
+	position absolute
+	right 32px
+	top 50%
+	transform translateY(-50%)
+	& div
+		display inline-block
+		margin 0 14px
+		set-font-size(18px)
+		letter-spacing 1px
+		cursor pointer
+
+.page-title
+	set-font-size(32px)
+	color #3f51b5
+	letter-spacing 1px
+	padding-top 36px
+	margin-bottom 24px
+	
+.items-comprados
+	width 100%
+	
+.items-comprados-container
+	width 100%
+	
+.item-each
+	width 29%
+	margin 25px 2%
+	background-color darken(#FFF, 10%)
+	border-radius 3px
+	display inline-block
+	
+.item-title
+	color #212121
+	set-font-size(18px)
+	letter-spacing 1px
+	margin-bottom 12px
+	margin-left 12px
+	
+.item-description	
+	set-font-size(14px)
+	color #757575
+	padding 0 12px
+	margin-bottom 16px
+	letter-spacing 1px
+	line-height 18px
+	
+.item-image
+	width 100%
+	height 150px
+	background-image url("../img/user_bg.jpg")
+	background-repeat no-repeat
+	background-size cover
+	background-position center
+	border-top-right-radius 3px
+	border-top-left-radius 3px
+	margin-bottom 22px
+	
+.item-buy
+	margin-bottom 10px
+	color #3f51b5
+	text-align left
+	cursor pointer
+	border-top 1px solid rgba(0,0,0,0.05)
+	padding-top 10px
+	text-indent 7px
+	letter-spacing 1px
+	& div
+		display inline-block
+		&.see-more a
+			color #757575
+	
+.divider
+	width 100%
+	height 1px
+	background-color rgba(0,0,0,0.15)
+	margin-top 70px
+
+.login-container
+	width 640px
+	margin 0 auto
+	position absolute
+	left 0
+	right 0
+	top 50%
+	transform translateY(-50%)
+	background-color #ecf0f1
+	border-radius 4px
+	padding 18px 62px
+	box-shadow 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+	
+.login-title
+	set-font-size(32px)
+	color #3f51b5
+	letter-spacing 1px
+	
+.login-input
+	margin-top 32px
+	& input
+		background-color transparent
+		border none
+		border-bottom 2px solid #3f51b5
+		box-shadow none
+		width 100%
+		set-font-size(20px)
+		padding 6px 12px
+		outline none
+		color #3f51b5
+		
+.login-button
+	margin-top 42px
+	text-align center
+	margin-bottom 16px
+	& a
+		border 2px solid #3f51b5
+		padding 8px 14px
+		color #3f51b5
+		set-font-size(18px)
+		background-color transparent
+		width 160px
+		letter-spacing 1px
+		cursor pointer
+		outline none
+		display block
+		margin 0 auto
+		
+.details-image
+	width 44%
+	margin 0 3%
+	background-image url("../img/user_bg.jpg")
+	background-position center
+	background-repeat no-repeat
+	background-size cover
+	height 350px
+	display inline-block
+	vertical-align top
+	margin-top 42px
+	
+.details-content
+	width 44%
+	margin 0 3%
+	display inline-block
+	vertical-align top
+	margin-top 42px
+	
+.details-title
+	set-font-size(20px)
+	color #212121
+	letter-spacing 1px
+	margin-bottom 30px
+	
+.details-description
+	color #757575
+	set-font-size(14px)
+	letter-spacing 1px
+	line-height 22px
+	
+.details-buy
+	color #3f51b5
+	set-font-size(18px)
+	letter-spacing 1px
+	margin-top 52px
+	cursor pointer
+		
+
+
+
+.list-products
+	width 100%
+	background-color #FFF
+	border-radius 4px
+	padding 24px 32px
+	margin-bottom 60px
+	
+.list-product-each
+	width 100%
+	padding 36px 14px
+	flex(flex, -webkit-flex)
+	justify-content initial
+	-webkit-justify-content initial
+	border-bottom 1px solid rgba(0,0,0,0.05)
+	position relative
+	&:last-child
+		border-bottom none
+	
+.list-product-thumbnail
+	width 40px
+	height 40px
+	border-radius 8px
+	margin-right 12px
+	background-image url("../img/user_bg.jpg")
+	background-position center
+	background-repeat no-repeat
+	background-size cover
+	display inline-block
+	
+.list-product-title
+	display inline-block
+	set-font-size(22px)
+	color #3f51b5
+	letter-spacing 1px
+	
+.list-product-delete
+	text-align right
+	position absolute
+	right 24px
+	color #f44336
+	cursor pointer
+	set-font-size(18px)
+	letter-spacing 1px
+	& i
+		set-font-size(32px)
+		margin-left 6px
+		position relative
+		top 6px
+		
+.list-product-bought
+	position absolute
+	left 67px
+	bottom 10px
+	set-font-size(14px)
+	color #757575
+		
+.add-product
+	width 100%
+	padding 0 62px
+	
+.add-product-title
+	set-font-size(32px)
+	color #3f51b5
+	letter-spacing 1px
+	
+.add-product-input
+	margin-top 42px
+	& input, & textarea
+		border none
+		border-bottom 2px solid #3f51b5
+		set-font-size(18px)
+		color #3f51b5
+		padding 6px 14px
+		width 100%
+		background-color transparent
+		outline none
+		font-family "Roboto"
+		font-weight 600
+		
+.add-product-button
+	margin-top 42px
+	text-align center
+	& a
+		set-font-size(22px)
+		border 2px solid #3f51b5
+		color #3f51b5
+		width 180px
+		background-color transparent
+		cursor pointer
+		outline none
+		display block
+		padding 8px 16px
+		margin 0 auto
+
+/***************************/
+

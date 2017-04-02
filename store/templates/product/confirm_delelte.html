@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+
+	<div class="container container-products">
+		<div class="list-products">
+			<form action="/product/{{ product.id }}/delete" method="post" >{% csrf_token %}
+				<div class="add-product">
+					<div class="add-product-button">
+                        <button type="submit" class="login-button">
+                            <a>Confirmar</a>
+                        </button>
+					</div>
+                </div><!--
+	         --><div class="add-product">
+					<div class="add-product-button">
+                        <button class="login-button">
+                            <a href="/store/myproducts/">
+                                    Cancelar
+                            </a>
+                        </button>
+					</div>
+
+                </div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+{% endblock %}

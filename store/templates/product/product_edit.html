@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+
+	<div class="container container-products">
+		<div class="list-products">
+			<form action="." method="post" name="form">{% csrf_token %}
+				<div class="add-product">
+					<div class="add-product-title">
+						Adicionar Item
+					</div>
+					<div class="add-product-input">
+                        {{ form.name.errors }}
+                        {{ form.name }}
+					</div>
+					<div class="add-product-input">
+                        {{ form.image_url.errors }}
+                        {{ form.image_url }}
+					</div>
+					<div class="add-product-input">
+                        {{ form.description.errors }}
+                        {{ form.description }}
+					</div>
+					<div class="add-product-button">
+				        <a href="#" onclick="document.forms['form'].submit(); return false;"> Cadastrar </a>
+					</div>
+
+                </div>
+			</form>
+		</div>
+	</div>
+
+{% endblock %}

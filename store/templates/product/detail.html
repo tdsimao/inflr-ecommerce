@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+
+	<div class="container">
+		<div class="page-title">
+			Detalhes do Produto
+		</div>
+
+		<div class="details-image">
+{#            TODO define css for the product image#}
+{#            <img src="{{ product.image_url }}">#}
+        </div><!--
+
+	 --><div class="details-content">
+			<div class="details-title">
+				{{ product.name }}
+			</div>
+
+			<div class="details-description">
+				{{ product.description }}
+			</div>
+            {% if product.for_sale %}
+                <a href = "/store/product/{{ product.id }}/buy">
+                    <div class="details-buy">
+                            <i class="zmdi zmdi-shopping-cart-plus"></i>
+                        Comprar
+                    </div>
+                </a>
+            {% else %}
+                <div class="details-buy">
+                    Vendido
+                </div>
+            {% endif %}
+		</div>
+	</div>
+
+
+
+{% endblock %}

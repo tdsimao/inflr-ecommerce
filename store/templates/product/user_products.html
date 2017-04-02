@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+	<div class="container container-products">
+		<div class="page-title">
+			Meus items
+		</div>
+{% if products_list %}
+		<div class="list-products">
+            {% for product in products_list %}
+                <div class="list-product-each">
+                    <div class="list-product-thumbnail"></div>
+                    <a href="/product/{{ product.id }}/">
+                        <div class="list-product-title">
+                            {{ product.name }}
+                        </div>
+                    </a>
+                    <a href="/product/{{ product.id }}/delete">
+                        <div class="list-product-delete">
+                            Excluir <i class="zmdi zmdi-close"></i>
+                        </div>
+                    </a>
+                    {% if product.sold_to %}
+                        <div class="list-product-bought">
+                            Comprado por {{ product.sold_to }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+		</div>
+{% else %}
+    <p>Nenhum produto cadastrado</p>
+{% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> Inflr Test </title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/material-design-iconic-font.css' %}">
+	<meta name="author" content="Inflr">
+	<meta name="description" content="Inflr">
+	<meta name="keywords" content="Inflr">
+	<meta name="viewport" content="initial-scale=1">
+</head>
+<body class="">
+	<header class="header-wrapper">
+		<div class="header-logo">
+			<img src="{% static 'img/logo.png' %}" alt="">
+		</div>
+		<div class="header-links">
+            {% if request.user.is_authenticated %}
+			    <div> {{ request.user.username }}</div>
+			    <div> <a href="/store/"> Home </a> </div>
+			    <div> <a href="/store/myproducts"> Meus Items </a> </div>
+			    <div> <a href="/store/product/new"> Cadastrar Item </a> </div>
+			    <div> <a href="/accounts/logout/"> Sair </a> </div>
+            {% else %}
+			    <div> <a href="/accounts/login/"> Entrar </a> </div>
+			    <div> <a href="/accounts/register/"> Novo Usuário </a> </div>
+            {% endif %}
+		</div>
+	</header>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
+
+

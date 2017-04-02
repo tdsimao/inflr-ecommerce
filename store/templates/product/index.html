@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+	<div class="container">
+        {% if request.user.is_authenticated %}
+            <div class="page-title">
+                Items comprados
+            </div>
+            <div class="items-comprados">
+                {% if bought_products %}
+                    <div class="items-comprados-container">
+                        {% for item in bought_products %}
+                            {% include "product/item-each.html" %}
+                        {% endfor %}
+                    </div>
+            {% else %}
+                <p>Nenhum produto comprado</p>
+            {% endif %}
+            </div>
+
+            <div class="divider"></div>
+        {% endif %}
+
+        <div class="page-title">
+            Lista de Items
+        </div>
+
+        <div class="items-comprados-container">
+            {% if products_for_sale %}
+                    <div class="items-comprados-container">
+                        {% for item in products_for_sale  %}
+                            {% include "product/item-each.html" %}
+                        {% endfor %}
+                    </div>
+            {% else %}
+                <p>Nenhum produto a venda</p>
+            {% endif %}
+
+
+        </div>
+
+    </div>
+
+
+{% endblock %}

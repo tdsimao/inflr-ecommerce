@@ -13,9 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
+from store.forms import MyRegistrationForm
 
 urlpatterns = [
+    url(r'', include('store.urls')),
+    url(r'^store/', include('store.urls')),
     url(r'^admin/', admin.site.urls),
+    # url('^accounts/', include('django.contrib.auth.urls')),
+    url(r'^accounts/',  include('registration.backends.simple.urls')),
+    # url(r'^accounts/', include('registration.backends.simple.urls',
+    #                            {'namespace': 'accounts', 'form_class': MyRegistrationForm}))
 ]
